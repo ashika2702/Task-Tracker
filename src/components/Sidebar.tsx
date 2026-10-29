@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import ConfirmModal from "@/components/ConfirmModal";
+import BrandLogo from "@/components/BrandLogo";
 import {
   LayoutDashboard,
   FolderKanban,
@@ -58,14 +59,7 @@ export default function Sidebar({ user }: SidebarProps) {
     <>
       {/* Mobile Top Header */}
       <div className="lg:hidden sticky top-0 z-40 bg-black border-b border-zinc-800 px-4 h-14 flex items-center justify-between text-white">
-        <div className="flex items-center gap-2.5">
-          <div className="h-8 w-8 rounded-lg bg-white/10 flex items-center justify-center p-1 flex-shrink-0 border border-white/10">
-            <img src="/task_logo.png" alt="TaskFlow Logo" className="w-full h-full object-contain" />
-          </div>
-          <span className="font-extrabold text-white text-sm tracking-wider uppercase">
-            TaskFlow
-          </span>
-        </div>
+        <BrandLogo size="sm" theme="dark" href="/" />
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -94,16 +88,7 @@ export default function Sidebar({ user }: SidebarProps) {
         <div>
           {/* Logo Header */}
           <div className="h-16 px-5 flex items-center justify-between border-b border-[#1f2937]">
-            <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-xl bg-white/10 flex items-center justify-center p-1.5 flex-shrink-0 border border-white/10">
-                <img src="/task_logo.png" alt="TaskFlow Logo" className="w-full h-full object-contain" />
-              </div>
-              <div>
-                <span className="font-extrabold text-white leading-none text-sm tracking-wider uppercase block">
-                  Task Tracker
-                </span>
-              </div>
-            </div>
+            <BrandLogo size="md" theme="dark" href="/" />
           </div>
 
           {/* Navigation Links */}
